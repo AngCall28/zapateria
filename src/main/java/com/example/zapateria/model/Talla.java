@@ -18,4 +18,21 @@ public class Talla {
     public Talla() {
     }
 
+    public Integer getIdTalla() {
+        return idTalla;
+    }
+
+    public void setIdTalla(Integer idTalla) {
+        this.idTalla = idTalla;
+    }
+
+    public int getMedidaMX() {
+        return medidaMX;
+    }
+
+    public void setMedidaMX(int medidaMX) {
+        this.medidaMX = medidaMX;
+    }
+
+
 }

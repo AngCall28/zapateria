@@ -24,6 +24,14 @@ public class Proveedores {
     public Proveedores() {
     }
 
+    public Proveedores(Integer idProveedor, String nombreProveedor, String nombrePaginaWeb, int numTelefono, String nombreMarca) {
+        this.idProveedor = idProveedor;
+        this.nombreProveedor = nombreProveedor;
+        this.nombrePaginaWeb = nombrePaginaWeb;
+        this.numTelefono = numTelefono;
+        this.nombreMarca = nombreMarca;
+    }
+
     public Integer getIdTalla() {
         return idProveedor;
     }
@@ -63,4 +71,6 @@ public class Proveedores {
     public void setNombreMarca(String nombreMarca) {
         this.nombreMarca = nombreMarca;
     }
+
+
 }

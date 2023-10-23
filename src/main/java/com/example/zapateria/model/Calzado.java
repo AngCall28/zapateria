@@ -1,4 +1,6 @@
+/*
 //nombre del package (model)
+
 package com.example.zapateria.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference; // usado para desplegar objetos con relación padre-hijo
@@ -12,8 +14,9 @@ public class Calzado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCalzado;
-    @Column(nullable = false, length = 200)
-    private String marca;
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name = "idUsuario")
+    //private Usuario marca;
     @Column(nullable = false, length = 200)
     private String modelo;
     @Column(nullable = false, length = 50)
@@ -83,4 +86,7 @@ public class Calzado {
     public void setPrecioPublico(float precioPublico) {
         this.precioPublico = precioPublico;
     }
+
+
 }
+        */
