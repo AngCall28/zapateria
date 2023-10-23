@@ -40,7 +40,7 @@ public class Calzado {
     @JoinColumn(name = "idProveedor")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Proveedores proveedores;
-    //REVISAR SI ES COHERENTE -- se asocia con Usuario de esta manera también?
+    //REVISAR SI ES COHERENTE -- se asocia con Usuario de esta manera también aquí, o sí es solo a Venta?
 
     @ManyToMany(cascade = CascadeType.MERGE)
     @JsonBackReference
