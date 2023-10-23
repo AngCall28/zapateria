@@ -32,12 +32,12 @@ public class Proveedores {
         this.nombreMarca = nombreMarca;
     }
 
-    public Integer getIdTalla() {
+    public Integer getIdProveedor() {
         return idProveedor;
     }
 
-    public void setIdTalla(Integer idTalla) {
-        this.idProveedor = idTalla;
+    public void setIdProveedor(Integer idProveedor) {
+        this.idProveedor = idProveedor;
     }
 
     public String getNombreProveedor() {

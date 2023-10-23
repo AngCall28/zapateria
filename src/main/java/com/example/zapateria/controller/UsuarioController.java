@@ -23,8 +23,8 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioRepository.findAll());
     }
     @GetMapping("/{idUsuario}")
-    public ResponseEntity<Usuario> findById(@PathVariable Integer idCliente) {
-        Optional<Usuario> usuarioOptional = usuarioRepository.findById(idCliente);
+    public ResponseEntity<Usuario> findById(@PathVariable Integer idUsuario) {
+        Optional<Usuario> usuarioOptional = usuarioRepository.findById(idUsuario);
         if (!usuarioOptional.isPresent()) {
             return ResponseEntity.notFound().build();
         }

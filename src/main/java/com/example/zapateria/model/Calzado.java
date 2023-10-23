@@ -1,4 +1,3 @@
-/*
 //nombre del package (model)
 
 package com.example.zapateria.model;
@@ -14,9 +13,8 @@ public class Calzado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCalzado;
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "idUsuario")
-    //private Usuario marca;
+    @Column(nullable = false, length = 200)
+    private String marca;
     @Column(nullable = false, length = 200)
     private String modelo;
     @Column(nullable = false, length = 50)
@@ -28,7 +26,41 @@ public class Calzado {
     @Column(nullable = false, length = 32)
     private float precioPublico;
 
+
+    /*@ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name = "idHistorial")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Historial historial;*/
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name = "idTalla")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Talla talla;
+
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name = "idProveedor")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Proveedores proveedores;
+    //REVISAR SI ES COHERENTE -- se asocia con Usuario de esta manera también?
+
+    @ManyToMany(cascade = CascadeType.MERGE)
+    @JsonBackReference
+    @JoinTable(
+            name = "VentaCalzado",
+            joinColumns = @JoinColumn(name = "idCalzado", referencedColumnName = "idCalzado"),
+            inverseJoinColumns = @JoinColumn(name = "idVenta", referencedColumnName = "idVenta")
+    )
+    private List<Venta> ventas;
+
     public Calzado() {
+    }
+
+    public Calzado(String marca, String modelo, String color, float precioCosto, float precioMayoreo, float precioPublico) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        this.precioCosto = precioCosto;
+        this.precioMayoreo = precioMayoreo;
+        this.precioPublico = precioPublico;
     }
 
     public Integer getIdCalzado() {
@@ -87,6 +119,41 @@ public class Calzado {
         this.precioPublico = precioPublico;
     }
 
+    public Talla getTalla() {
+        return talla;
+    }
 
+    public void setTalla(Talla talla) {
+        this.talla = talla;
+    }
+
+    public Proveedores getProveedores() {
+        return proveedores;
+    }
+
+    public void setProveedores(Proveedores proveedores) {
+        this.proveedores = proveedores;
+    }
+
+    public List<Venta> getVentas() {
+        return ventas;
+    }
+
+    public void setVentas(List<Venta> ventas) {
+        this.ventas = ventas;
+    }
+
+    @Override
+    public String toString() {
+        return "Calzado{" +
+                "idCalzado=" + idCalzado +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", color='" + color + '\'' +
+                ", precioCosto=" + precioCosto +
+                ", precioMayoreo=" + precioMayoreo +
+                ", precioPublico=" + precioPublico +
+                '}';
+    }
 }
-        */
+
