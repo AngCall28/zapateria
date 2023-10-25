@@ -27,20 +27,19 @@ public class Calzado {
     private float precioPublico;
 
 
-    /*@ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "idHistorial")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Historial historial;*/
+    private Historial historial;
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "idTalla")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Talla talla;
-
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "idProveedor")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Proveedores proveedores;
-    //REVISAR SI ES COHERENTE -- se asocia con Usuario de esta manera también aquí, o sí es solo a Venta?
+    //REVISAR SI ES COHERENTE
 
     @ManyToMany(cascade = CascadeType.MERGE)
     @JsonBackReference
@@ -80,8 +79,7 @@ public class Calzado {
     }
 
     public String getModelo() {
-        return modelo;
-    }
+        return modelo;}
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
@@ -117,6 +115,14 @@ public class Calzado {
 
     public void setPrecioPublico(float precioPublico) {
         this.precioPublico = precioPublico;
+    }
+
+    public Historial getHistorial() {
+        return historial;
+    }
+
+    public void setHistorial(Historial historial) {
+        this.historial = historial;
     }
 
     public Talla getTalla() {
