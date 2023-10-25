@@ -22,7 +22,7 @@ public class ProveedoresController {
     public ResponseEntity<Iterable<Proveedores>> findAll(){
         return ResponseEntity.ok(proveedoresRepository.findAll());
     }
-    @GetMapping("/{idUsuario}")
+    @GetMapping("/{idProveedor}")
     public ResponseEntity<Proveedores> findById(@PathVariable Integer idProveedor) {
         Optional<Proveedores> proveedoresOptional = proveedoresRepository.findById(idProveedor);
         if (!proveedoresOptional.isPresent()) {
