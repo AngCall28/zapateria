@@ -17,7 +17,7 @@ public class Usuario {
     @Column(length = 20)
     private String password;
     //@OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
-    //private List<Venta> ventas = new ArrayList<>(); //REVISAR SI ES CORRECTO, sino, excluir y/o editar setter & getter
+    //private List<Venta> ventas = new ArrayList<>(); //REVISAR SI ES CORRECTO, sino, incluir, excluir y/o editar setter & getter
 
     public Usuario() {
     }
