@@ -13,12 +13,12 @@ public class Talla {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTalla;
     @Column(nullable = false, length = 4)
-    private int medidaMX;
+    private float medidaMX;
 
     public Talla() {
     }
 
-    public Talla(Integer idTalla, int medidaMX) {
+    public Talla(Integer idTalla, float medidaMX) {
         this.idTalla = idTalla;
         this.medidaMX = medidaMX;
     }
@@ -31,11 +31,11 @@ public class Talla {
         this.idTalla = idTalla;
     }
 
-    public int getMedidaMX() {
+    public float getMedidaMX() {
         return medidaMX;
     }
 
-    public void setMedidaMX(int medidaMX) {
+    public void setMedidaMX(float medidaMX) {
         this.medidaMX = medidaMX;
     }
 
