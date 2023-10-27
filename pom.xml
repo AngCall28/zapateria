@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>zapateria</artifactId>
+	<artifactId>zapateriaAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>zapateria</name>
 	<description>Aplicación para gestionar una tienda de zapatos</description>
