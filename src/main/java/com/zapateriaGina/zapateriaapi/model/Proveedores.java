@@ -18,14 +18,14 @@ public class Proveedores {
     @Column(nullable = false, length = 200)
     private String nombrePaginaWeb;
     @Column(nullable = false, length = 50)
-    private int numTelefono;
+    private String numTelefono;
     @Column(nullable = false, length = 32)
     private String nombreMarca;
 
     public Proveedores() {
     }
 
-    public Proveedores(Integer idProveedor, String nombreProveedor, String nombrePaginaWeb, int numTelefono, String nombreMarca) {
+    public Proveedores(Integer idProveedor, String nombreProveedor, String nombrePaginaWeb, String numTelefono, String nombreMarca) {
         this.idProveedor = idProveedor;
         this.nombreProveedor = nombreProveedor;
         this.nombrePaginaWeb = nombrePaginaWeb;
@@ -57,11 +57,11 @@ public class Proveedores {
         this.nombrePaginaWeb = nombrePaginaWeb;
     }
 
-    public int getNumTelefono() {
+    public String getNumTelefono() {
         return numTelefono;
     }
 
-    public void setNumTelefono(int numTelefono) {
+    public void setNumTelefono(String numTelefono) {
         this.numTelefono = numTelefono;
     }
 
